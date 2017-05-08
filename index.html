@@ -187,6 +187,9 @@ $(document).ready(function () {
 <li>
   <a href="3-twitterAPI.html">Twitter API</a>
 </li>
+<li>
+  <a href="3-shiny.html">Shiny APP</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -223,13 +226,13 @@ img {
 <h1>Introduction</h1>
 <div id="goals-of-the-project" class="section level2">
 <h2>Goals of the project</h2>
-<p>In this project, we present a <em>state-level overview</em> of the expansion of health insurance in the United States and its effects on health outcomes and cost outcomes, from 2008 to 2015 under President Obama’s term. One of the hallmarks of Obama’s presidency was the passage and implementation of the <strong>Affordable Care Act (ACA)</strong> to increase health insurance coverage and regulate healthcare provision to protect consumers’ rights. In addition, we are also interested in how people perceive the (ACA), as seen from articles related to the ACA from the New York Times.</p>
+<p>In this project, we present a <em>state-level overview</em> of the expansion of health insurance in the United States and its effects on health outcomes and cost outcomes, from 2008 to 2015 under President Obama’s term. One of the hallmarks of Obama’s presidency was the passage and implementation of the <strong>Affordable Care Act (ACA)</strong> to increase health insurance coverage and regulate healthcare provision to protect consumers’ rights. In addition, we are also interested in how people perceive the (ACA), as seen from articles related to the ACA from the New York Times and Twitter.</p>
 <p><strong>Research Questions:</strong></p>
 <ol style="list-style-type: decimal">
 <li><p><em>Trends of health insurance expansion in the United States</em>: How has the percentage of uninsured Americans changed overall, and differentially by states, from 2008 to 2015? How has the composition of healthcare sources changed?</p></li>
 <li><p><em>Health outcomes</em>: How do the states compare in health outcomes, such as mortality rates and access to preventative and remedying treatments?</p></li>
 <li><p><em>Financial outcomes</em>: How do the states compare in financial and cost outcomes, such as the containment of out-of-pocket costs, insurance premium growth and government spending?</p></li>
-<li><p><em>Perceptions of the ACA</em>: We used API to download articles realted to ACA on New York Times from 2011-2017 and transformed them into a corpus to conduct a text analysis. How has the overall trend of public attention changed over the years, as seen by the number of articles relating to the ACA? What topics do people focus on when they discuss the ACA?</p></li>
+<li><p><em>Perceptions of the ACA</em>: We used API to download articles realted to ACA on New York Times from 2011-2017 and transformed them into a corpus to conduct a text analysis. How has the overall trend of public attention changed over the years, as seen by the number of articles relating to the ACA? What topics do people focus on when they discuss the ACA on Twitter?</p></li>
 </ol>
 </div>
 <div id="overview-of-the-affordable-care-act-in-the-united-states" class="section level2">
@@ -245,6 +248,22 @@ img {
 <p><em>Regulations</em> preventing insurance companies from discriminating in price and provision based on people’s age, gender, or pre-existing conditions</p>
 <p>These provisions of the ACA make health insurance accessible and affordable to people previously without coverage. In addition, people who already have health insurance would also benefit from increased choice, a cap on out-of-pocket expenses, as well as more comprehensive coverage, as insurance is now required to cover more basic treatments than before.</p>
 <p>However, this increased coverage comes at a cost of increased premium growths for consumers, and increases in federal spending. The expansion of health insurance and healthcare coverage is projected to cost of the U.S. government up to $1.34 trillion over the next decade. It is thus no surprise that the States fall on various sides of the political spectrum when it comes to support for medicaid.</p>
+</div>
+<div id="perceptions-of-the-aca-in-the-united-states" class="section level2">
+<h2>Perceptions of the ACA in the United States</h2>
+<p>Except th public data released from governemnt and census source, We are also interested in how people think about Affordable care act(ACA). In this part, we want to have a look of the tweets and newspaper related to ACA.</p>
+<p>Research Questions: 1) The overll trend of public attention, which can be shown as the number of articles and tweets related to ACA in different years. 2) What people discuss about when they discuss ACA, which can be shown as the word frequencies and sentiment analysis.</p>
+<p><strong>New York Times</strong></p>
+<p>To realize the perceptions of ACA, we use API to download articles realted to ACA on New york times from 2011-2017 and transform them into corpus to do the text analysis. The reason that we choosed the New York Times as our analysis target is because it is a representative and reputative newspaper in the U.S.</p>
+<p><strong>Twitter</strong></p>
+<p>We got tweets from Twitter API to analyze and visualize the trends of health insurance issues on social media. The data we Selected including ACA, Affordable Care Act, #ACA and obamacare (The popular term for legislation passed in 2010 under the deceptively named Affordable Care Act). The sample sizes is 1000</p>
+<p>The Twitter search API allows access to a subset of popular or recent tweets (in the last 4-6 days). That is, it allows querying past tweets (though a significantly small fraction of all tweets). To us, this is a great way to get one’s hands wet on collecting and cleaning tweet datasets, however, it doesn’t really provide any utility for research as the fraction of tweets received may not really be representative of the entire tweet stream and the sample sizes are limited.</p>
+</div>
+<div id="future-study" class="section level2">
+<h2>Future Study</h2>
+<p><strong>Public Perceptions of the ACA</strong></p>
+<p>In the current project, due to the time limitation, we only examine the contexts in the New York Times, which represents more liberal voices in the U.S. For more completed study, we will suggest to do text analysis in other newespaper or press media as well, aspecially comparing articles in the different organizations holding different standpoint of views (i.e., the New York Times v.s. the Wall Street Journal).</p>
+<p>The limitation of extracting tweets through Twitter API is every Twitter account can only connect to a small sampling of the Streaming API. Also, cleaning data from the messy dataset that we retrieved and determining the boundaries of data collection are quite completed tasks. Although Twitter API does have such limitations, analyzing the trends of Twitter is still helpful to know public perceptions.</p>
 </div>
 </div>
 
