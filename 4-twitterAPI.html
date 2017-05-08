@@ -223,20 +223,20 @@ $(document).ready(function () {
 <p>Data Preparation using Twitter: The Twitter search API does not return an exhaustive list of tweets that match your search criteria, as Twitter only makes available a sample of recent tweets. For a more comprehensive search, we will need to use the Twitter streaming API, creating a database of results and regularly updating them, or use an online service that can do this. Now that we have tweet texts, we need to clean them up before doing any analysis. This involves removing content, such as punctuation, that has no emotional content, and removing any content that causes errors.</p>
 <p><strong>figure 17</strong>_ Word Cloud <img src="4-twitterAPI_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>Topic Modelling</p>
-<pre><code>##      Topic 1  Topic 2  Topic 3  Topic 4  Topic 5  Topic 6  Topic 7 
-## [1,] &quot;rt&quot;     &quot;obama&quot;  &quot;rt&quot;     &quot;rt&quot;     &quot;care&quot;   &quot;care&quot;   &quot;rt&quot;    
-## [2,] &quot;obama&quot;  &quot;rt&quot;     &quot;act&quot;    &quot;afford&quot; &quot;act&quot;    &quot;obama&quot;  &quot;afford&quot;
-## [3,] &quot;act&quot;    &quot;care&quot;   &quot;afford&quot; &quot;obama&quot;  &quot;courag&quot; &quot;rt&quot;     &quot;act&quot;   
-## [4,] &quot;afford&quot; &quot;presid&quot; &quot;leav&quot;   &quot;care&quot;   &quot;seat&quot;   &quot;your&quot;   &quot;your&quot;  
-## [5,] &quot;courag&quot; &quot;abl&quot;    &quot;profil&quot; &quot;act&quot;    &quot;afford&quot; &quot;seat&quot;   &quot;abl&quot;   
-## [6,] &quot;speech&quot; &quot;seat&quot;   &quot;obama&quot;  &quot;vote&quot;   &quot;leav&quot;   &quot;afford&quot; &quot;vote&quot;  
-##      Topic 8      
-## [1,] &quot;obama&quot;      
-## [2,] &quot;care&quot;       
-## [3,] &quot;afford&quot;     
-## [4,] &quot;act&quot;        
-## [5,] &quot;courag&quot;     
-## [6,] &quot;profileincâ&quot;</code></pre>
+<pre><code>##      Topic 1  Topic 2  Topic 3       Topic 4  Topic 5       Topic 6 
+## [1,] &quot;rt&quot;     &quot;care&quot;   &quot;profileincâ&quot; &quot;act&quot;    &quot;act&quot;         &quot;act&quot;   
+## [2,] &quot;obama&quot;  &quot;obama&quot;  &quot;abc&quot;         &quot;rt&quot;     &quot;rt&quot;          &quot;care&quot;  
+## [3,] &quot;afford&quot; &quot;act&quot;    &quot;rt&quot;          &quot;care&quot;   &quot;courag&quot;      &quot;afford&quot;
+## [4,] &quot;care&quot;   &quot;afford&quot; &quot;leav&quot;        &quot;courag&quot; &quot;profileincâ&quot; &quot;courag&quot;
+## [5,] &quot;defend&quot; &quot;leav&quot;   &quot;vote&quot;        &quot;leav&quot;   &quot;care&quot;        &quot;obama&quot; 
+## [6,] &quot;aca&quot;    &quot;vote&quot;   &quot;nerdywonka&quot;  &quot;health&quot; &quot;nerdywonka&quot;  &quot;polit&quot; 
+##      Topic 7    Topic 8 
+## [1,] &quot;act&quot;      &quot;rt&quot;    
+## [2,] &quot;afford&quot;   &quot;care&quot;  
+## [3,] &quot;obama&quot;    &quot;courag&quot;
+## [4,] &quot;care&quot;     &quot;defend&quot;
+## [5,] &quot;rt&quot;       &quot;speech&quot;
+## [6,] &quot;congress&quot; &quot;trump&quot;</code></pre>
 </div>
 
 
