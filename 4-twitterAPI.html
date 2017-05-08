@@ -180,6 +180,9 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
+  <a href="5-shiny.html">Shiny APP</a>
+</li>
+<li>
   <a href="1-overview_of_state_trends.html">Overview of State Trends</a>
 </li>
 <li>
@@ -190,9 +193,6 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="4-twitterAPI.html">Twitter API</a>
-</li>
-<li>
-  <a href="5-shiny.html">Shiny APP</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -215,28 +215,22 @@ $(document).ready(function () {
 <div id="twitter-api-sentimenttext-analysis" class="section level1">
 <h1>Twitter API Sentiment/Text Analysis</h1>
 <p>Get some tweets from Twitter to analyze and visualize Set up Twitter API: Selecting data including Obamacare, ACA, Affordable Care Act, and #ACA (n=1000)</p>
-<p><strong>figure 15</strong>_ Comparison of words Now that we’re sure there’s a difference, what can we say about the difference in the content? We’ll use the tidytext package. We start by dividing into individual words using the unnest_tokens function, and removing some common stopwords.</p>
+<p><strong>figure 17</strong>_ Comparison of words Now that we’re sure there’s a difference, what can we say about the difference in the content? We’ll use the tidytext package. We start by dividing into individual words using the unnest_tokens function, and removing some common stopwords. As we can see the most frequently used word when discussing ACA on Twitter is rt (Republican Party), care, act, afforadable, health, obama, and so on. From the table, we found that most people discussed about political issues (i.e., the topics of republican and democratic parties), affordable care act itself, and finanical concerns (i.e., bill, pay, etc).</p>
 <p><img src="4-twitterAPI_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Sentiment analysis: Since we’ve observed a difference in sentiment between the Android and iPhone tweets, let’s try quantifying it. We’ll work with the NRC Word-Emotion Association lexicon, available from the tidytext package, which associates words with 10 sentiments: positive, negative, anger, anticipation, disgust, fear, joy, sadness, surprise, and trust.</p>
 <p>To measure the sentiment of the Android and iPhone tweets, we can count the number of words in each category. (For example, we see that 41 of the 2331 words in the Android tweets were associated with “anger”). We then want to measure how much more likely the Android account is to use an emotionally-charged term relative to the iPhone account. Since this is count data, we can use a Poisson test to measure the difference:</p>
-<p><strong>figure 16</strong>_ <img src="4-twitterAPI_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><strong>figure 18</strong>_ From the below table, we could see that most people feel quite positive about ACA, the words they used are expressed their trust, anticipation, joy and positive feeling.</p>
+<p><img src="4-twitterAPI_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Data Preparation using Twitter: The Twitter search API does not return an exhaustive list of tweets that match your search criteria, as Twitter only makes available a sample of recent tweets. For a more comprehensive search, we will need to use the Twitter streaming API, creating a database of results and regularly updating them, or use an online service that can do this. Now that we have tweet texts, we need to clean them up before doing any analysis. This involves removing content, such as punctuation, that has no emotional content, and removing any content that causes errors.</p>
-<p><strong>figure 17</strong>_ Word Cloud <img src="4-twitterAPI_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><strong>figure 19</strong>_ Unsurprisingly, Word Cloud shows that most frequently mentioned terms are health, care, affordable, aca, and act. Except the discussion of insurance policy itself, people do talk frequently about political-related topics, such as Republican Party (rt), Grand Old Party (gop), and Obama. Also, some terms related to push forward or hold back the policy, such as courage, urge and repeal. Financial words are used, like pay, bill and save. Finally, specific names of people and place were mentioned in the tweets (i.e., Larry Levitt and Mecklenburg).</p>
+<p><img src="4-twitterAPI_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><strong>figure 20</strong>_</p>
 <p>Topic Modelling</p>
-<pre><code>##      Topic 1  Topic 2  Topic 3       Topic 4  Topic 5       Topic 6 
-## [1,] &quot;rt&quot;     &quot;care&quot;   &quot;profileincâ&quot; &quot;act&quot;    &quot;act&quot;         &quot;act&quot;   
-## [2,] &quot;obama&quot;  &quot;obama&quot;  &quot;abc&quot;         &quot;rt&quot;     &quot;rt&quot;          &quot;care&quot;  
-## [3,] &quot;afford&quot; &quot;act&quot;    &quot;rt&quot;          &quot;care&quot;   &quot;courag&quot;      &quot;afford&quot;
-## [4,] &quot;care&quot;   &quot;afford&quot; &quot;leav&quot;        &quot;courag&quot; &quot;profileincâ&quot; &quot;courag&quot;
-## [5,] &quot;defend&quot; &quot;leav&quot;   &quot;vote&quot;        &quot;leav&quot;   &quot;care&quot;        &quot;obama&quot; 
-## [6,] &quot;aca&quot;    &quot;vote&quot;   &quot;nerdywonka&quot;  &quot;health&quot; &quot;nerdywonka&quot;  &quot;polit&quot; 
-##      Topic 7    Topic 8 
-## [1,] &quot;act&quot;      &quot;rt&quot;    
-## [2,] &quot;afford&quot;   &quot;care&quot;  
-## [3,] &quot;obama&quot;    &quot;courag&quot;
-## [4,] &quot;care&quot;     &quot;defend&quot;
-## [5,] &quot;rt&quot;       &quot;speech&quot;
-## [6,] &quot;congress&quot; &quot;trump&quot;</code></pre>
+<p>In text mining, we often have collections of documents, such as social media posts or news articles, that we’d like to divide into natural groups so that we can understand them separately. Topic modeling is a method for unsupervised classification of such documents, similar to clustering on numeric data, which finds natural groups of items even when we’re not sure what we’re looking for.</p>
+<p>Latent Dirichlet allocation (LDA) is a particularly popular method for fitting a topic model. It treats each document as a mixture of topics, and each topic as a mixture of words. This allows documents to “overlap” each other in terms of content, rather than being separated into discrete groups, in a way that mirrors typical use of natural language.</p>
+<p>Latent Dirichlet allocation is one of the most common algorithms for topic modeling. Without diving into the math behind the model, we can understand it as being guided by two principles: Every document is a mixture of topics and Every topic is a mixture of words.</p>
+<p>This visualization lets us understand the eight topics that were extracted from the tweets. The most common words in topic 1 include “rt”, “care”, and “health”, which suggests it may represent health insurance and republican issues. Those most common in topic 2 include “obama”, “act”, and “bill”, suggeting that this topic represents issues related to obamacare. One important observation about the words in each topic is that some words, such as “act” are common within both topics. This is an advantage of topic modeling as opposed to “hard clustering” methods: topics used in natural language could have some overlap in terms of words.</p>
+<p><img src="4-twitterAPI_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 
 
